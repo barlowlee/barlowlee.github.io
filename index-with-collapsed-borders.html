@@ -29,21 +29,11 @@
       /* SOCIAL STYLES */
       a.social-link {
         background: rgba(150, 150, 150, 0.5); /*a is for opacity*/
-        border-radius: 99px;
-        box-sizing: border-box;
-        color: #fff;
+        color: blue;
         display: inline-block;  /*display: none; Causes the element not to be displayed at all*/
         /*visibility: hidden;*/  /*Causes the element not to be displayed but still take up room*/
-        font-family: helvetica, arial, sans;
-        font-size: 1rem;
-        font-weight: bold;
-        height: 2.5em;
-        line-height: 1;
-        padding-top: 0.85em;
-        text-align:center;
-        text-decoration: none;
-        vertical-align: middle;  /*doesn't actually change anything, but prevents future messiness*/
-        width: 2.5em;
+        height: 36px;
+        width: 36px;
       }
       .social-list {
         list-style: none;
@@ -54,16 +44,16 @@
       .social-list > li {  
         /* > is not necessary in this case but prevents <li>s of nested <ul>s from getting the same styling*/
         display: inline-block;
-        margin: 0 1em;
+
       }
 
-      /* BIO STYLES */
+      /* BIO STYLES (BIO BOXES HAVE COLLAPSED BORDERS)*/
       .bio-wrapper {
         /*background-color: #c0e0c3;*/
         font-size: 24px;
         /*height: 300px;*/
         margin: auto;
-        /*evenly distributes elements within this wrapper horizontally */ 
+        /*evenly distributes horizontally */ 
         /*auto only applies to the left and right margins and if a max-width is set*/
         max-width: 960px;
         overflow: hidden;
@@ -78,10 +68,11 @@
       }*/
       .bio-box {
         border: 1px solid black;
+        border-width: 0 1px 1px 0; /*default borders are right and bottom*/
         box-sizing: border-box;
         float: left;
         font-size: 1rem;
-        margin: 40px 1% 0;
+        margin: 40px 0 0;
         padding: 0 2% 2% 2%;  
         width: 23%;
       }
@@ -94,10 +85,14 @@
       .bio-box img {
         width: 100%;
       }
-
+      .bio-box-top {
+        border-top-width: 1px  /*top row gets a border on top*/
+      }
+      .bio-box-left {
+        border-left-width: 1px; /*left column gets a border on the left*/
+      }
       .bio-copy {
         font-size: 1em;
-        line-height: 1.5;
       }
       .bio-copy a {
         color: green;
@@ -110,20 +105,20 @@
       <h1>I'm an h1</h1>
       <ul class="social-list">
         <li>
-          <a href="http://example.com/" class="social-link">Fb</a>
+          <a href="http://example.com/" class="social-link">Link</a>
         </li>
         <li>
-          <a href="http://example.com/" class="social-link">Tw</a>
+          <a href="http://example.com/" class="social-link">Link</a>
         </li>
         <li>
-          <a href="http://example.com/" class="social-link">Gh</a>
+          <a href="http://example.com/" class="social-link">Link</a>
         </li>
       </ul>
     </div>  <!-- full-hero hero home -->
 
     <h2>I'm an h2</h2>
     <div class="bio-wrapper">
-      <div class="bio-box">
+      <div class="bio-box bio-box-top bio-box-left">
         <img src="http://placekitten.com/g/400/400">
         <h3>Michael Hartl</h3>
         <a href="http://twitter.com/mhartl" class="social-link">here</a>
@@ -143,7 +138,7 @@
           </p>
         </div>
       </div>
-      <div class="bio-box">
+      <div class="bio-box bio-box-top">
         <img src="http://placekitten.com/g/400/400">
         <h3>Lee Donahoe</h3>
         <a href="https://twitter.com/leedonahoe" class="social-link">here</a>
@@ -156,7 +151,7 @@
           </p>
         </div>
       </div>
-      <div class="bio-box">
+      <div class="bio-box bio-box-top">
         <img src="http://placekitten.com/g/400/400">
         <h3>Nick Merwin</h3>
         <a href="https://twitter.com/nickmerwin" class="social-link">here</a>
@@ -169,7 +164,7 @@
           </p>
         </div>
       </div>
-      <div class="bio-box">
+      <div class="bio-box bio-box-top">
         <img src="http://placekitten.com/g/400/400">
         <h3>??</h3>
         <p>
