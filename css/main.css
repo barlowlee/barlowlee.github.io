@@ -72,6 +72,14 @@ h2 + p {
 }*/
 
 /* HEADER STYLES */
+
+.header {
+  background-color: #000;
+  color: #fff;
+  /*  height: 300px;
+  position: relative;
+  width: 100%;*/
+}
 .header-nav {
   float: right;
   padding: 5.5vh 60px 0 0;
@@ -81,15 +89,15 @@ h2 + p {
   margin-left: 1em;
 }
 .header-nav > li ~ li {
-border-left: 1px solid rgba(0, 0, 0, 0.3);
+border-left: 1px solid rgba(255, 255, 255, 0.3);
 padding-left: 1em;
 }
 /* This one (above) is tricky.  It selects ALL li's in the header-nav which
-immediately follow an li.  This means that it doesn't apply to the 
+immediately follow an li (as a group).  This means that the styling doesn't apply to the 
 first li, but it does apply to all the rest. */
 
 .header-nav a {
-  color: #000;
+  color: #fff;
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
@@ -103,12 +111,34 @@ first li, but it does apply to all the rest. */
   color: #ed6e2f;
 }
 .header-nav li:first-child a:hover {
-  color: #000;
+  color: #fff;
 }
-
+.header-logo {
+  background-color: #000;
+  box-sizing: border-box;
+  display: block;
+  height: 10vh;
+  /*left: 50%;*/
+  /*margin: -55px 0 0 -55px;*/
+  padding: 10px;
+  /*position: absolute;*/
+  /*Takes the logo out of the flow of content,
+  but doesn't affect anything yet*/
+  position: relative;
+  /*Puts the header back into the flow of content*/
+  text-align: center;
+  /*top: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+  /*Translate means move in a 2d space, 50% of its own x and y dimensions*/
+  width: 10vh;
+}
+.header-logo img {
+  height: 80%;
+  /*means that it's 80% of the height of the parent element*/
+}
 .header-logo:hover,
 .header-logo:active {
-  opacity: 0.5;
+  background-color: #ed6e2f;
 }
 
 /* HERO STYLES */
