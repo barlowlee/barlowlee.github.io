@@ -48,6 +48,11 @@ a img {
 
 /* GLOBAL STYLES */
 
+html {
+  box-shadow: 0 0 0 30px #000 inset;
+  /*x-axis offset, y-axis offset, blurriness, and width of shadow*/
+  padding: 0 30px;
+}
 body {
   font-family: helvetica, arial, sans;
 }
@@ -76,9 +81,12 @@ h2 + p {
 .header {
   background-color: #000;
   color: #fff;
+  position: fixed;
   /*  height: 300px;
-  position: relative;
-  width: 100%;*/
+  position: relative; */
+  width: 100%;
+  z-index: 20;
+  /*A high z-index will stay on top of other elements with lower z-indices*/
 }
 .header-nav {
   float: right;
@@ -98,13 +106,16 @@ first li, but it does apply to all the rest. */
 
 .header-nav a {
   color: #fff;
+}
+
+.nav-links a {
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
 }
-.header-nav a:hover,
-.header-nav a:active {
+.nav-links a:hover,
+.nav-links a:active {
   color: #ed6e2f;
 }
 .header-nav li:first-child a {
@@ -118,7 +129,7 @@ first li, but it does apply to all the rest. */
   box-sizing: border-box;
   display: block;
   height: 10vh;
-  /*left: 50%;*/
+  left: -30px;
   /*margin: -55px 0 0 -55px;*/
   padding: 10px;
   /*position: absolute;*/
@@ -133,17 +144,47 @@ first li, but it does apply to all the rest. */
   width: 10vh;
 }
 .header-logo img {
-  height: 80%;
+  /*height: 80%;*/
   /*means that it's 80% of the height of the parent element*/
+  /*width: auto;*/
+  width: 4.3vh;
 }
 .header-logo:hover,
 .header-logo:active {
   background-color: #ed6e2f;
 }
 
+/* FOOTER STYLES */
+.footer {
+  background-color: #000;
+  padding: 10vh 0 15vh;
+  text-align: center;
+}
+.footer img {
+  width: 50px;
+}
+.footer h3 {
+  color: #fff;
+  padding-top: 1.5em;
+  text-transform: uppercase;
+}
+.footer h3 span {
+  color: #aaa;
+}
+.footer-nav li {
+  display: inline-block;
+  margin: 2em 1em 0;
+}
+.footer-nav a {
+  color: #aaa;
+}
+
 /* HERO STYLES */
 .full-hero {
   background-color: #c7dbfc;
+  /*box-shadow: 10px 10px 25px 0 #000;
+  This shadow is offset right and down 10px, and blurs for 25 more px
+  The fourth term is the additional width all the way around*/
   height: 50vh;
 }
 
