@@ -75,6 +75,11 @@ h1 {
 h2 {
   font-size: 2em;
 }
+h4 {
+  color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 a {
   color: #6397b5;
 }
@@ -177,6 +182,7 @@ first li, but it does apply to all the rest. */
 }
 
 /* FOOTER STYLES */
+
 .footer {
   background-color: #000;
   padding: 10vh 0 15vh;
@@ -202,6 +208,7 @@ first li, but it does apply to all the rest. */
 }
 
 /* COLUMN STYLES */
+
 .col-three {
   display: flex;
   flex: 1;
@@ -224,7 +231,35 @@ first li, but it does apply to all the rest. */
 .col-three .col-aside {
   flex: 0 1 20em;
 }
+.col-two {
+  display: flex;
+}
+.col-two .col-aside {
+  flex: 0 0 20em;
+  order: 1;
+}
+.col-two .col-content {
+  flex: 1;
+}
 
+/* PAGE STYLES */
+
+.page {
+  margin: 10vh auto 15vh;
+  max-width: 980px;
+  width: 85vw;
+}
+.page h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.page h2 {
+  margin-bottom: 0.5em;
+}
+.page h4 {
+  margin-bottom: 1em;
+}
 
 /* HERO STYLES */
 .full-hero {
@@ -286,8 +321,14 @@ first li, but it does apply to all the rest. */
   background-color: #000;
   color: #dfd;
 }
+.half-hero {
+  background-position: center center;
+  background-size: cover;
+  height: 40vh;
+}
 
 /* SOCIAL STYLES */
+
 a.social-link {
   background: rgba(150, 150, 150, 0.5); /*a is for opacity*/
   border-radius: 99px;
@@ -296,7 +337,8 @@ a.social-link {
   display: inline-block;  /*display: none; Causes the element not to be displayed at all*/
   /*visibility: hidden;*/  /*Causes the element not to be displayed but still take up room*/
   font-family: helvetica, arial, sans;
-  font-size: 1rem;
+  /*changed from 1rem to 1em so that it is the same size as the gravatar on the blog posts*/
+  font-size: 1em;
   font-weight: bold;
   height: 2.5em;
   line-height: 1;
@@ -327,6 +369,17 @@ a.social-link {
 .home-section h2 {
   margin-bottom: 1.5rem;
   text-align: center;
+}
+.home-section h4 {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+.home-section .post-header {
+  text-align: center;
+}
+.home-section .blog-posts {
+  margin: auto;
+  width: 75%;
 }
 .home-callout {
   align-items: center;
@@ -362,6 +415,7 @@ a.social-link {
 }
 
 /* BIO STYLES */
+
 .bio-wrapper {
   /*background-color: #c0e0c3;*/
   font-size: 24px;
@@ -413,6 +467,7 @@ a.social-link {
   /*any anchor tag which is a child of a selector of class .bio-copy gets the styling*/
 
 /* GALLERY STYLES */
+
 .gallery-thumbs {
   height: 90vh;
   overflow: scroll;
@@ -448,3 +503,95 @@ a.social-link {
 .gallery-info h3 {
   margin-bottom: 1em;
 }
+
+/* BLOG STYLES */
+
+.blog-recent {
+  text-align: right;
+
+}
+.blog-title-list {
+  list-style: none;
+  padding: 0;
+}
+.blog-title-list li ~ li {
+  margin-top: 1.5em;
+}
+.blog-title-list span {
+  color: #999;
+  display: block;
+  /* Note: span is naturally inline, but making it display:block puts the date on the line below; */
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 0.5em;
+
+}
+.blog-posts ~ .blog-posts {
+  /* Putting lines between the posts, but not before the first one */
+  border-top: 1px dotted rgba(0,0,0,0.2);
+  margin-top: 4em;
+  padding-top: 4em;
+  /* Puts 4em spacer above and below the border for the second and subsequent posts */
+}
+.blog-posts .post-header {
+  font-size: 0.8rem;
+}
+.post-header {
+  margin-bottom: 1.5em;
+}
+.post-header img,
+.post-header .social-link {
+  margin-right: 0.5em;
+}
+.post-header img {
+  border-radius: 99px;
+  display: inline-block;
+  height: 2.5em;
+  vertical-align: middle;
+}
+.posts-image {
+  background-position: center;
+  background-size: cover;
+  height: 6em;
+  margin-bottom: 1.5em;
+  /* Initially, a funkily-centered image of a shark appears at every post,
+   But eventually each blog post will have its own image. */
+}
+.post {
+  width: 100%;
+}
+.post-content,
+.post-footer {
+  margin: auto;
+  max-width: 40em;
+  width: 85vw;
+}
+.pull-left {
+  float: left;
+  margin: 2em 2em 2em -2%;
+}
+.pull-right {
+  float: right;
+  margin: 2em -2% 2em 2em ;
+}
+.post-aside {
+  background-color: rgba(0,0,0,0.02);
+  float: right;
+  margin: 0 0 2em 2em;
+  padding: 2em;
+}
+.post .post-header {
+  margin-bottom: 2.5em;
+  text-align: center;
+}
+.post-content {
+  font-size: 1.1rem;
+}
+.post-footer {
+  border-top: 1px solid rgba(0,0,0,0.2);
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 3em;
+  padding-top: 2em;
+}
+
