@@ -1,2 +1,0 @@
-This is a spurious file to add to the github push to see if I can get the SSH authentication to work.  Added another sentence so I can push this up.  And one more time, now adding git config --global credential.helper osxkeychain in hopes that I will only have to enter the password one more time.
-Changing this file again in hopes that the next push won't require a password.
